@@ -11118,10 +11118,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  padding: 0 5%;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -11130,6 +11126,13 @@ body {
 
 body {
   min-height: 100vh;
+}
+
+body {
+  padding: 0 5%;
+}
+body .table i {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */

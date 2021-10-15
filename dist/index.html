@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/0d287fafb0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Task1</title>
+</head>
+
+<body>
+
+
+
+  <div class="container-xs col-md-5 col-lg-3 m-auto mt-3 p-3 border border-primary rounded-3">
+    <form id="form1">
+      <div class="mb-3">
+        <label for="inputName" class="form-label">Name</label>
+        <input name="name" type="text" class="form-control" id="inputName" aria-describedby="emailHelp">
+      </div>
+      <select name="category" class="form-select" aria-label="category-task">
+        <option selected>Choose category</option>
+        <option value="1">Task</option>
+        <option value="2">Random Thought</option>
+        <option value="3">Idea</option>
+        <option value="4">Quote</option>
+      </select>
+      <div class="input-group my-4">
+        <span class="input-group-text">Content:</span>
+        <textarea name="content" type="text" class="form-control " id="inputContent"
+          aria-describedby="content"></textarea>
+      </div>
+      <div class="text-center">
+        <button id="submit-btn" type="submit" class="btn btn-primary">Add Note</button>
+
+      </div>
+    </form>
+  </div>
+
+  <div class="container-xs col-lg-2 col-sm-3 mr-auto mt-2 rounded-3 mx-lg-auto">
+    <select id="filter-select" class="form-select" aria-label="Default select example">
+      <option value="1" selected>All</option>
+      <option value="2">Archived</option>
+      <option value="3">Not Archived</option>
+    </select>
+  </div>
+
+  <div class="container bg-warning border-2 col-lg-9 py-3 mt-2 rounded">
+    <div class="d-flex px-3">
+      <div class="col-2">
+        <h5>Name</h5>
+      </div>
+      <div class="col-2">
+        <h5>Created</h5>
+      </div>
+      <div class="col-2">
+        <h5>Category</h5>
+      </div>
+      <div class="col-3">
+        <h5>Content</h5>
+      </div>
+      <div class="col-2">
+        <h5>Dates</h5>
+      </div>
+      <div class="col text-end">
+        <i class="fas fa-trash"></i>
+        <i class="fas fa-archive"></i>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive col-lg-9 m-auto p-3">
+    <table class="table">
+      <tbody id="tbody" class="px-3">
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="container bg-warning border-2 col-lg-9 p-3 mt-2 rounded">
+    <div class="d-flex px-3">
+      <div class="col-5">
+        <h5>Note Category</h5>
+      </div>
+
+      <div class="col-2">
+        <h5>Active</h5>
+      </div>
+      <div class="col-2">
+        <h5>Archived</h5>
+      </div>
+
+    </div>
+  </div>
+  <div class="table-responsive col-lg-9 m-auto p-3">
+    <table class="table">
+      <tbody class="sumList" px-3>
+
+      </tbody>
+    </table>
+  </div>
+
+
+  <script src="./bundle.js"></script>
+</body>
+
+</html>

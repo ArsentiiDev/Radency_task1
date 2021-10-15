@@ -1,0 +1,14 @@
+@use './components/form';
+@import "bootstrap";
+
+
+
+body {
+    padding: 0 5%;
+    .table{
+        i{
+            cursor: pointer;
+        }
+        
+    }
+}
