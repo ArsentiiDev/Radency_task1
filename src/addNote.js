@@ -3,6 +3,7 @@ import { addlToLocalStorage } from './localStorage';
 
 export function addNote(name, category, icon, content) {
   const tableBody = document.getElementById("tbody");
+  
     const now = new Date().toLocaleDateString().split(".").join("/");
     let dates = content.match(/([\d]+)([\-\./])([\d]+)([\-\./])([\d]+)/gm);
     if (!dates) dates = "no dates";
