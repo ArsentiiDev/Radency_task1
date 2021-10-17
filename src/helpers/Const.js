@@ -10,3 +10,9 @@ export const icons = {
     Idea: `<i class="fas fa-lightbulb"></i>`,
     Qoute: `<i class="fas fa-quote-right"></i>`,
   };
+
+  export const options = {
+      ALL:"All",
+      ARCHIVED:"Archived",
+      ACTIVE:"Not Archived"
+  }

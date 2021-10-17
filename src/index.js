@@ -13,16 +13,15 @@ import {
   trashBtnHandler,
 } from "./BtnHandlers";
 import { addNote } from "./addNote";
-import { clearFields } from "./utils";
 import { categories, icons } from "./helpers/Const";
 import { getFromLocalStorage } from "./localStorage";
 import { addToSumList } from "./addSumList";
-
+import { createFilterOptions } from "@mui/core";
+import { clearFields } from "./helpers/func";
 
 export let archiveCount = 0;
 export const sumListItems = {};
 export const archives = {};
-
 document.addEventListener("DOMContentLoaded", getFromLocalStorage);
 filterSelect.addEventListener("click", filterTodos);
 
@@ -71,7 +70,6 @@ function filterTodos(e) {
   }
 }
 
-
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const categoryName = categories.hasOwnProperty(form.elements.category.value)
@@ -89,7 +87,3 @@ submitBtn.addEventListener("click", (e) => {
   addToSumList(categoryName);
   clearFields(form);
 });
-
-
-
-

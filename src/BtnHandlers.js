@@ -99,7 +99,7 @@ export function editBtnHandler(e) {
     }
     
     archives[item.children[2].innerText] = archiveCount.innerHTML
-    console.log(archives)
+    //console.log(archives)
     localStorage.setItem('archives',JSON.stringify(archives))
 }
 
