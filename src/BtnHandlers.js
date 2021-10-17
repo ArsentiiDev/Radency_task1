@@ -1,6 +1,7 @@
-import {addToSumList,archiveCount,archives} from './index'
+import {archiveCount,archives} from './index'
 import { removefromLocalStorage } from './localStorage';
 import { icons,categories } from './helpers/Const';
+import { addToSumList } from './addSumList';
 
 export function editBtnHandler(e) {
     let item = e.target.parentElement.parentElement;
