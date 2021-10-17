@@ -1,19 +1,6 @@
-
-const icons = {
-    Task: `<i class="fas fa-tasks"></i>`,
-    "Random Thought": `<i class="fas fa-brain"></i>`,
-    Idea: `<i class="fas fa-lightbulb"></i>`,
-    Qoute: `<i class="fas fa-quote-right"></i>`,
-  };
-  
-  const categories = {
-    1: "Task",
-    2: "Random Thought",
-    3: "Idea",
-    4: "Qoute",
-  };
 import {addToSumList,archiveCount,archives} from './index'
 import { removefromLocalStorage } from './localStorage';
+import { icons,categories } from './helpers/Const';
 
 export function editBtnHandler(e) {
     let item = e.target.parentElement.parentElement;
@@ -45,8 +32,6 @@ export function editBtnHandler(e) {
     });
     item.innerHTML = arr.join("");
 
-    //item.insertAdjacentHTML('beforebegin',arr)
-    //item.replaceChild()
   }
 
   export function checkBtnHandler(e) {
@@ -104,9 +89,16 @@ export function editBtnHandler(e) {
     const sumItem = sumList.getElementsByClassName(item.children[2].innerText)[0]
     let archiveCount = sumItem.getElementsByClassName('archiveCount')[0]
     let count = sumItem.getElementsByClassName('count')[0]
-    count.innerHTML = +count.innerHTML - 1
+    if(item.classList.contains('archive')){
+      count.innerHTML = +count.innerHTML - 1
     archiveCount.innerHTML = ++archiveCount.innerHTML;
+    } else {
+      count.innerHTML = +count.innerHTML + 1
+      archiveCount.innerHTML = --archiveCount.innerHTML;
+    }
+    
     archives[item.children[2].innerText] = archiveCount.innerHTML
+    console.log(archives)
     localStorage.setItem('archives',JSON.stringify(archives))
 }
 
@@ -114,6 +106,18 @@ export function trashBtnHandler(e){
     const tableBody = document.getElementById("tbody");
     let item = e.target.parentElement.parentElement;
     let selected = document.getElementById(item.id);
+    const sumList = document.querySelector(".sumList");
+    const sumItem = sumList.getElementsByClassName(item.children[2].innerText)[0]
     removefromLocalStorage(selected)
+    if(item.classList.contains('archive')){
+      archives[item.children[2].innerText]--
+      let archiveCount = sumItem.getElementsByClassName('archiveCount')[0]
+      archiveCount.innerHTML = --archiveCount.innerHTML;
+    } else {
+      let count = sumItem.getElementsByClassName('count')[0]
+      count.innerHTML = --count.innerHTML;
+    }
+    localStorage.setItem('archives',JSON.stringify(archives))
+
     tableBody.removeChild(selected)
 }
