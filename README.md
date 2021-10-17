@@ -1,4 +1,4 @@
-# Solution for task 2 - Radency
+# Solution for task 1 - Radency
 
 This is a note App made with Vanilla JS and Bootstrap
 
